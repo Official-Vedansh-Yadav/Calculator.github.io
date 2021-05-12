@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <section class="heading"><h1>Calculator Project of Vedansh</h1></section>
+
+         <div class="calculator">
+             <form name="forms">
+        <input type="text" class="screen" name="answer"/> <!-- This is the screen of calculator -->
+              </form>
+        <table> <!-- Here I given buttons of calculator -->
+             <tr>
+                <td><button onclick="forms.answer.value += 0">0</button></td>
+                <td><button onclick="forms.answer.value = Math.sqrt(forms.answer.value)">√</button></td>
+                <td><button onclick="forms.answer.value = Math.cbrt(forms.answer.value)">3√</button></td>
+                <td><button onclick="forms.answer.value += '**' " class="power">^</button></td>    
+            </tr>  
+            <tr>
+                <td><button onclick="forms.answer.value += 9">9</button></td>
+                <td><button onclick="forms.answer.value += 8">8</button></td>
+                <td><button onclick="forms.answer.value += 7">7</button></td>
+                <td><button onclick="forms.answer.value += '*'">X</button></td>    
+            </tr>
+            <tr>
+                <td><button onclick="forms.answer.value += 6">6</button></td>
+                <td><button onclick="forms.answer.value += 5">5</button></td>
+                <td><button onclick="forms.answer.value += 4">4</button></td>
+                <td><button onclick="forms.answer.value += '-' ">-</button></td>    
+            </tr>
+            <tr>
+                <td><button onclick="forms.answer.value += 3">3</button></td>
+                <td><button onclick="forms.answer.value += 2">2</button></td>
+                <td><button onclick="forms.answer.value += 1">1</button></td>
+                <td><button onclick="forms.answer.value += '+' ">+</button></td>    
+            </tr>
+            <tr>
+                <td><button onclick="forms.answer.value = ' ' ">c</button></td>    
+                <td><button onclick="forms.answer.value += '.' ">.</button></td>
+                <td><button onclick="forms.answer.value += '/'">÷</button></td>
+                <td><button accesskey="a" onclick="forms.answer.value = eval(forms.answer.value)">=</button></td>
+            </tr>
+
+        </table>
+    </div>
+
+    </div>
+</body>
+<!-- <script src="main.js"></script> -->
+</html>
