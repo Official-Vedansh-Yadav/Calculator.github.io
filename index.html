@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator 2.O</title>
+    <!-- <link rel="stylesheet" type="text/css" href="F:\Javascript Calculator\style.css"> -->
+    <style>
+        .container{
+    text-align: center;
+}
+
+table{
+    margin: auto;
+}
+
+input{
+    font-size: 37px;
+    border: 5px solid rgb(128, 108, 108);
+    border-radius: 15px;
+    width: 456px;
+}
+
+.btn{
+    font-size: 44px;
+    background-color: aquamarine;
+    width: 114px;
+    height: 60px;
+    border-radius: 20px;
+}
+
+.calculator{
+          background-color: rgb(116, 124, 128);
+          display: inline-block;
+          padding: 10px;
+          border-radius: 19px;
+}
+
+.heading{
+    font-size: 20px;
+}
+
+.power{
+    font-size: 38px;
+}
+.button{
+    background-color: aquamarine;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 44px;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 71px;
+    text-align: center;
+    width: 226px;
+}
+
+
+        .calculator{
+            max-width: 470px;
+            min-width: 470px;
+            height: 445px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="heading"><h1>Calculator Project of Vedansh</h1></section>
+
+         <div class="calculator">
+             <form name="forms">
+        <input type="text" id ="screen" name="answer"/> <!-- This is the screen of calculator -->
+              </form>
+        <table> <!-- Here I given buttons of calculator -->
+             <tr>
+                <td><button class="btn">0</button></td>
+                <td><button class="btn">sqrt</button></td>
+                <td><button class="btn">cbrt</button></td>
+                <td><button class="power btn">power</button></td>    
+            </tr>  
+            <tr>
+                <td><button class="btn">9</button></td>
+                <td><button class="btn">8</button></td>
+                <td><button class="btn">7</button></td>
+                <td><button class="btn">X</button></td>    
+            </tr>
+            <tr>
+                <td><button class="btn">6</button></td>
+                <td><button class="btn">5</button></td>
+                <td><button class="btn">4</button></td>
+                <td><button class="btn">-</button></td>    
+            </tr>
+            <tr>
+                <td><button class="btn">3</button></td>
+                <td><button class="btn">2</button></td>
+                <td><button class="btn">1</button></td>
+                <td><button class="btn">+</button></td>    
+            </tr>
+            <tr>
+                <td><button class="btn">c</button></td>    
+                <td><button class="btn">.</button></td>
+                <td><button class="btn">÷</button></td>
+                <td><button class="btn">=</button></td>
+            </tr>
+
+            <tr class="back">
+                <!-- <td><button onclick="forms.answer.value = eval(forms.answer.value + '+1' ) ">+1</button></td>    
+                <td><button onclick="forms.answer.value = eval(forms.answer.value + '-1' ) ">-1</button></td>
+                <td><button onclick="forms.answer.value += '10'">10</button></td> -->
+                <td><button class ="back button" onclick="back()">Backspace</button></td>
+            </tr>
+        </table>
+    </div>
+
+    </div>
+</body>
+<script>
+    let screen = document.getElementById('screen');
+    let buttons = document.querySelectorAll('button');
+
+    for (const item of buttons) {
+        item.addEventListener('click',function abc(){
+            
+            let btntext = item.innerHTML;
+
+            if (item.innerHTML == 'X') {
+                btntext = '*'
+                screen.value += btntext;
+            } else if (item.innerHTML == '÷') {
+                btntext = '/';
+                screen.value += btntext;
+            } else if (btntext == '=') {
+                screen.value = eval(screen.value);
+            } else if (btntext == 'c') {
+                screen.value = '';
+            }else if (btntext == 'power'){
+                btntext = '**';
+                screen.value += btntext;
+            }else if (btntext == 'sqrt') {
+                btntext = Math.sqrt(screen.value);
+                screen.value = btntext;
+            }else if (btntext == 'cbrt') {
+                btntext = Math.cbrt(screen.value);
+                screen.value = btntext;
+            }else if (btntext == 'Backspace') {
+                 let value = forms.answer.value;
+                 value = value.substr(0,value.length-1);
+                 screen.value = value;
+            }else {
+                screen.value += btntext;
+            }
+        
+            console.log(btntext);
+        })
+    }
+</script> 
+</html>
